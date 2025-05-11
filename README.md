@@ -121,8 +121,6 @@ Visit `http://localhost:3000` in your browser.
 ### ✍️ New Campground Form
 ![New Campground](project_screenshots/Editing_Campground.png)
 
-### 💬 Submit Review
-![Submit Review](project_screenshots/submit_review.png)
 
 ---
 
