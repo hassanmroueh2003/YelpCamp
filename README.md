@@ -124,7 +124,4 @@ Master’s Student in Automation & Robotics – TU Dortmund
 
 ## 📄 License
 
-This project is for educational and portfolio purposes.
-
-```
 
