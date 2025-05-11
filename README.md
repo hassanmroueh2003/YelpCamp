@@ -122,6 +122,4 @@ Master’s Student in Automation & Robotics – TU Dortmund
 
 ---
 
-## 📄 License
-
 
