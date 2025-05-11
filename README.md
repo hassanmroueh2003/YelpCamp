@@ -105,13 +105,25 @@ Visit `http://localhost:3000` in your browser.
 
 ---
 
-## 📸 Screenshots Included
+## 📸 Screenshots
 
-* Home Page (`/campgrounds`)
-* Show Campground (with reviews and carousel)
-* Register / Login pages
-* Campground Edit Form
-* Review Delete Buttons
+### 🏠 Home Page
+![Home Page](project_screenshots/homepage.png)
+
+### 🏕️ Campground Details
+![Campground Details](project_screenshots/campground_details.png)
+
+### 📝 Register Page
+![Register Page](project_screenshots/register_page.png)
+
+### 🔐 Login Page
+![Login Page](project_screenshots/login_page.png)
+
+### ✍️ New Campground Form
+![New Campground](project_screenshots/new_campground.png)
+
+### 💬 Submit Review
+![Submit Review](project_screenshots/submit_review.png)
 
 ---
 
