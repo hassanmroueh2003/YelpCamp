@@ -108,8 +108,7 @@ Visit `http://localhost:3000` in your browser.
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](project_screenshots/Screenshot 2025-05-11 175118.png)
-
+![Home Page](project_screenshots/homepage.png)
 ### 🏕️ Campground Details
 ![Campground Details](project_screenshots/campground_details.png)
 
