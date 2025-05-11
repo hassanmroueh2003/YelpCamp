@@ -109,6 +109,10 @@ Visit `http://localhost:3000` in your browser.
 
 ### 🏠 Home Page
 ![Home Page](project_screenshots/homepage.png)
+
+### 🏕️ All Campgrounds Page
+![All Campgrounds](project_screenshots/campgrounds.png)
+
 ### 🏕️ Campground Details
 ![Campground Details](project_screenshots/campground_details.png)
 
