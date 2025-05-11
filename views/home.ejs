@@ -1,0 +1,57 @@
+<%- layout('layouts/boilerplate') %>
+
+<div class="container mt-5">
+    <h1 class="mb-5 text-center">Welcome to YelpCamp</h1>
+    
+    <div class="row">
+        <div class="col-md-6 d-flex mb-4">
+            <div class="card w-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDIUwKM9NoQNlRuI_ZTenGpRUYpGmzItSDag&s" class="card-img-top" alt="Camping">
+                <div class="card-body">
+                    <h5 class="card-title">Explore Campgrounds</h5>
+                    <p class="card-text">Discover beautiful campgrounds, view details, and leave reviews. Find your next adventure!</p>
+                    <a href="/campgrounds" class="btn btn-primary mb-3">View Campgrounds</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex mb-4">
+            <div class="card w-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRem_c2UVBTZckm9rh1AFynK8zXsEGpEsCaZg&s" class="card-img-top" alt="Nature">
+                <div class="card-body">
+                    <h5 class="card-title">Plan Your Stay</h5>
+                    <p class="card-text">Whether you're looking for a relaxing getaway or an adventurous trip, find the perfect campground for your needs.</p>
+                    <a href="/campgrounds/new" class="btn btn-primary mb-3">Add a New Campground</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/campgrounds" class="btn btn-success btn-sm">Browse All Campgrounds</a>
+    </div>
+</div>
+
+<style>
+    /* public/styles.css */
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+}
+
+.card-img-top {
+    height: 200px; /* Ensure images have uniform height */
+    object-fit: cover; /* Ensure images cover the area */
+}
+
+.btn-primary, .btn-success {
+    width: 100%; /* Remove if you don't want full width for other buttons */
+}
+
+.btn-success {
+    width: auto; /* Adjusts button width to fit its content */
+    padding: 0.5rem 1rem; /* Adjust padding for a smaller button */
+    font-size: 1rem; /* Adjust font size */
+}
+
+</style>

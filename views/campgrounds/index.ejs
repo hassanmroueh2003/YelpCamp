@@ -1,0 +1,46 @@
+<%- layout('layouts/boilerplate') %>
+<h1 class="my-4 text-center">All Campgrounds</h1>
+
+<div class="container">
+    <% for (let camp of campgrounds) { %>
+        <div class="card mb-4 shadow-sm">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <!-- Carousel Start -->
+                    <div id="carousel<%= camp._id %>" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <% camp.images.forEach((img, index) => { %>
+                                <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                                    <img src="<%= img %>" alt="<%= camp.title %>" class="d-block w-100" style="object-fit: cover; height: 250px;">
+                                </div>
+                            <% }); %>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%= camp._id %>" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel<%= camp._id %>" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <!-- Carousel End -->
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= camp.title %></h5>
+                        <p class="card-text"><%= camp.description %></p>
+                        <p class="card-text">
+                            <small class="text-muted"><%= camp.location %></small>
+                        </p>
+                        <a href="/campgrounds/<%= camp._id %>" class="btn btn-primary">Show</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+<!-- Add Bootstrap CSS and JS if not already included -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

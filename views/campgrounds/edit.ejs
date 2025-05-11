@@ -1,0 +1,116 @@
+<%- layout('layouts/boilerplate') %>
+
+<div class="container mt-4">
+    <h1 class="mb-4">Edit Campground</h1>
+    <form action="/campgrounds/<%= camp._id %>?_method=PUT" method="POST" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="campground[title]" id="title" class="form-control" value="<%= camp.title %>" required>
+            <div class="invalid-feedback">
+                Please provide a title.
+            </div>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+       
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="campground[location]" id="location" class="form-control" value="<%= camp.location %>" required>
+            <div class="invalid-feedback">
+                Please provide a location.
+            </div>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" name="campground[price]" id="price" class="form-control" step="0.01" value="<%= camp.price %>" required>
+                <div class="invalid-feedback">
+                    Please provide a price.
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="images" class="form-label">Image URLs</label>
+            <div id="image-urls">
+                <% camp.images.forEach((image) => { %>
+                    <div class="input-group mb-2">
+                        <input type="text" name="campground[images][]" class="form-control" value="<%= image %>" required>
+                        <button type="button" class="btn btn-outline-secondary remove-url">-</button>
+                    </div>
+                <% }) %>
+            </div>
+            <button type="button" class="btn btn-outline-secondary add-url">Add Image URL</button>
+            <div class="invalid-feedback">
+                Please provide at least one image URL.
+            </div>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="campground[description]" id="description" class="form-control" rows="4" required><%= camp.description %></textarea>
+            <div class="invalid-feedback">
+                Please provide a description.
+            </div>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Update Campground</button>
+    </form>
+    
+    <div class="mt-3">
+        <a href="/campgrounds/<%= camp._id %>" class="btn btn-secondary">Back to Campground</a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const imageUrlsContainer = document.getElementById('image-urls');
+        
+        // Add new URL input field
+        document.querySelector('.add-url').addEventListener('click', () => {
+            const newInputGroup = document.createElement('div');
+            newInputGroup.classList.add('input-group', 'mb-2');
+
+            const newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.name = 'campground[images][]';
+            newInput.classList.add('form-control');
+            newInput.required = true;
+
+            const removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.classList.add('btn', 'btn-outline-secondary', 'remove-url');
+            removeButton.textContent = '-';
+
+            removeButton.addEventListener('click', () => {
+                newInputGroup.remove();
+            });
+
+            newInputGroup.appendChild(newInput);
+            newInputGroup.appendChild(removeButton);
+            imageUrlsContainer.appendChild(newInputGroup);
+        });
+
+        // Remove URL input field
+        imageUrlsContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('remove-url')) {
+                event.target.parentElement.remove();
+            }
+        });
+    });
+</script>
