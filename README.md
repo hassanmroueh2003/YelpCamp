@@ -123,7 +123,7 @@ Visit `http://localhost:3000` in your browser.
 ![Login Page](project_screenshots/login_page.png)
 
 ### ✍️ New Campground Form
-![New Campground](project_screenshots/Editing_Campground.png)
+![New Campground](project_screenshots/new_campground.png)
 
 
 ---
